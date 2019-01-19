@@ -6,32 +6,26 @@
 {% block body %}
 <div class="col">
     <div class="row">
-        <form action="{{ url_for('morph', function=f, kernel=k)}}" method="GET">
+        <form action="{{ url_for('morph', f=fucntion, k=kernel)}}" method="GET" target="_blank">
             <div class="form-group">
                 <label for="exampleFormControlSelect1">形态学</label>
-                <select class="form-control" id="exampleFormControlSelect1" name="f">
-                    <option value="a">开运算</option>
-                    <option value="b">闭运算</option>
-                    <option value="c">膨胀</option>
-                    <option value="d">腐蚀</option>
+                <select class="form-control" id="exampleFormControlSelect1" name="function">
+                    <option value="open">开运算</option>
+                    <option value="close">闭运算</option>
+                    <option value="dilate">膨胀</option>
+                    <option value="erode">腐蚀</option>
                 </select>
             </div>
             <div class="form-group">
-                    <label for="exampleFormControlSelect1">kernel</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="k">
-                        <option value="3">3×3</option>
-                        <option value="5">5×5</option>
-                        <option value="7">7×7</option>
-                    </select>
-                </div>
-                <button class="btn btn-primary" type="submit">确定</button>
+                <label for="exampleFormControlSelect1">kernel</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="kernel">
+                    <option value="3">3×3</option>
+                    <option value="5">5×5</option>
+                    <option value="7">7×7</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" type="submit">确定</button>
         </form>
-    </div>
-    <div class="row">
-        <div class="jumbotron">
-            <h1 class="display-3">图像处理大作业</h1>
-            <p class="lead">陈曦 17363008</p>
-        </div>
     </div>
 </div>
 {% endblock %}
