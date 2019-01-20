@@ -1,19 +1,21 @@
 {% extends "layout.html" %}
-{% block title %}图像处理大作业{% endblock %}
+{% block title %}图像滤波{% endblock %}
 {% block head %}
 {{super()}}
 {% endblock %}
 {% block body %}
 <div class="col">
     <div class="row">
-        <form action="{{ url_for('morph', f=fucntion, k=kernel)}}" method="GET" target="_blank">
+        <form action="{{ url_for('filter', f=fucntion, k=kernel)}}" method="GET" target="_blank">
             <div class="form-group">
-                <label for="exampleFormControlSelect1">形态学</label>
+                <label for="exampleFormControlSelect1">图像滤波</label>
                 <select class="form-control" id="exampleFormControlSelect1" name="function">
-                    <option value="open">开运算</option>
-                    <option value="close">闭运算</option>
-                    <option value="dilate">膨胀</option>
-                    <option value="erode">腐蚀</option>
+                    <option value="average">均值滤波</option>
+                    <option value="median">中值滤波</option>
+                    <option value="gaussian">高斯滤波</option>
+                    <option value="sobelx">Sobel X</option>
+                    <option value="sobely">Sobel Y</option>
+                    <option value="laplacian">Laplacian</option>
                 </select>
             </div>
             <div class="form-group">
@@ -33,8 +35,8 @@
                 原始图像
             </div>
         </div>
-        <div class="row">
-            <img src="../static/lena_gray.jpg" alt="原图" />
+    <div class="row">
+            <img src="../static/lena.jpg" alt="原图" />
         </div>
 </div>
 {% endblock %}

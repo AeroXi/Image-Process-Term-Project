@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block title %}图像处理大作业{% endblock %}
+{% block title %}边缘检测{% endblock %}
 {% block head %}
 {{super()}}
 {% endblock %}
@@ -11,12 +11,18 @@
                 <label for="exampleFormControlSelect1">边缘检测</label>
                 <select class="form-control" id="exampleFormControlSelect1" name="function">
                     <option value="canny">Canny</option>
-                    <option value="sobel">Sobel</option>
-                    <option value="laplacian">Laplacian</option>
                 </select>
             </div>
             <button class="btn btn-primary" type="submit">确定</button>
         </form>
     </div>
+    <div class="row">
+            <div class="alert alert-primary" role="alert" style="margin:5px 0 6px 0">
+                原始图像
+            </div>
+        </div>
+        <div class="row">
+            <img src="../static/lena_gray.jpg" alt="原图" />
+        </div>
 </div>
 {% endblock %}

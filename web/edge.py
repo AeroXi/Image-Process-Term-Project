@@ -4,10 +4,6 @@ import numpy as np
 def get_edge(img, function):
     if function == 'canny':
         return canny(img)
-    elif function == 'sobel':
-        return cv2.Sobel(img,cv2.CV_64F,1,0,ksize=5)
-    elif function == 'laplacian':
-        return cv2.Laplacian(img, cv2.CV_64F)
 
 
 

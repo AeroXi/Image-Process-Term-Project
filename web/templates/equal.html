@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}直方图均衡化{% endblock %}
+{% block head %}
+{{super()}}
+{% endblock %}
+{% block body %}
+<div class="col">
+    <div class="row">
+        <form action="{{ url_for('equal', f=fucntion)}}" method="GET" target="_blank">
+            <div class="form-group">
+                    
+                <select class="form-control" id="exampleFormControlSelect1" name="function">
+                    <option value="canny">直方图均衡化</option>
+                    </select>
+            </div>
+            <button class="btn btn-primary" type="submit">确定</button>
+        </form>
+    </div>
+    <div class="row">
+        <div class="alert alert-primary" role="alert" style="margin:5px 0 6px 0">
+            原始图像
+        </div>
+    </div>
+    <div class="row">
+        <img src="../static/lena_gray.jpg" alt="原图" />
+    </div>
+</div>
+{% endblock %}

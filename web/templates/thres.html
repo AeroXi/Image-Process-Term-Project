@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}阈值化{% endblock %}
+{% block head %}
+{{super()}}
+{% endblock %}
+{% block body %}
+<div class="col">
+    <div class="row">
+        <form action="{{ url_for('thres', v=value)}}" method="GET" target="_blank">
+            <div class="input-group mb-3">
+                    <input type="text" name="value" class="form-control" placeholder="请输入阈值" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="submit">阈值化</button>
+                    </div>
+                  </div>
+        </form>
+    </div>
+    <div class="row">
+        <a class="btn btn-primary"  target="_blank" href="{{ url_for('thres', value=-1)}}" role="button">Otsu阈值化</a>
+    </div>
+    <div class="row">
+            <div class="alert alert-primary" role="alert" style="margin:5px 0 6px 0">
+                原始图像
+            </div>
+        </div>
+        <div class="row">
+            <img src="../static/lena_gray.jpg" alt="原图" />
+        </div>
+</div>
+{% endblock %}
